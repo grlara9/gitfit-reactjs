@@ -11,8 +11,8 @@ function App() {
 
       <Navigation />
 
-      <Form />
 
+      <Form />
       </Router>
     </div>
   );
