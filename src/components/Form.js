@@ -10,7 +10,11 @@ const Form = props =>{
         props.search(searchValue)
     }
     return(
+        <>
+        
         <form>
+        <h1 className="logo">gitFit App</h1>
+        <h4 className="title">Welcome to the gitFit App. Here you will find everything you need to reach your fitness goals! </h4>
             <label>Name</label>
         <input
           type="text"
@@ -58,8 +62,16 @@ const Form = props =>{
                   <option value="active">Active</option>
                   <option value="veryactive">Very Active</option>
                 </select>
+
+                <label for="sex">Gender</label>
+                <select id="sex" class="browser-default">
+                  <option value="" > select an option </option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                </select>
           <button type="submit"onClick={handleFormSubmit}>SEARCH</button>
      </form>
+     </>
     )
 }
 export default Form
