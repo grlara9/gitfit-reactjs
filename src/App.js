@@ -5,6 +5,11 @@ import Form from './components/Form';
 import './App.css';
 
 function App() {
+
+  const onSubmit = value =>{
+    console.log("si llego el valor", {value})
+    submitRequest(value)
+  }
   return (
     <div className="App">
       <Router>
@@ -12,7 +17,7 @@ function App() {
       <Navigation />
 
 
-      <Form />
+      <Form submitInputs={onSubmit} />
       </Router>
     </div>
   );

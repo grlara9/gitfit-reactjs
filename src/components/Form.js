@@ -2,12 +2,17 @@ import React, {useState} from 'react'
 import './Form.css'
 const Form = props =>{
 
-    const [searchValue, setSearchValue] = useState('');
+    const [inputs, setInputs] = useState([]);
 
+    const handleChange = e =>{
+        const { name, value } = e.target;
+        setInputs({ ...inputs, [name]: value})
+    }
 
-    const handleFormSubmit = e => {
+    const onSubmit = e => {
         e.preventDefault();
-        props.search(searchValue)
+        props.submitInputs(inputs)
+        
     }
     return(
         <>
@@ -18,31 +23,35 @@ const Form = props =>{
             <label>Name</label>
         <input
           type="text"
-          value={searchValue}
-          onChange={e => setSearchValue(e.target.value)}
+          name="name"
+          value={inputs.name}
+          onChange={handleChange}
           placeholder="Enter Name"
           />
         <label>Age</label>
         <input
           type="text"
-          value={searchValue}
-          onChange={e => setSearchValue(e.target.value)}
+          name="age"
+          value={inputs.age}
+          onChange={handleChange}
           placeholder="Enter Your Age"
           />
         
         <label>Height</label>
         <input
           type="text"
-          value={searchValue}
-          onChange={e => setSearchValue(e.target.value)}
+          name="height"
+          value={inputs.height}
+          onChange={handleChange}
           placeholder="Height in Inches"
           />
 
         <label>Weight</label>
         <input
           type="text"
-          value={searchValue}
-          onChange={e => setSearchValue(e.target.value)}
+          name="weight"
+          value={inputs.weight}
+          onChange={handleChange}
           placeholder="Enter Weight in Lbs"
           />
         <label>What is your Goal</label>
@@ -69,7 +78,7 @@ const Form = props =>{
                   <option value="male">Male</option>
                   <option value="female">Female</option>
                 </select>
-          <button type="submit"onClick={handleFormSubmit}>SEARCH</button>
+          <button type="submit"onClick={onSubmit}>SEARCH</button>
      </form>
      </>
     )
