@@ -2,8 +2,12 @@ import React from 'react'
 
 const useFitness =() =>{
 
-    return{
+    const submitRequest = async values =>{
+        console.log("SE ISO>>", values)
+    }
 
+    return{
+        submitRequest
     }
 
 }
