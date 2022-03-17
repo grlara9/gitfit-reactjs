@@ -55,15 +55,15 @@ const Form = props =>{
           placeholder="Enter Weight in Lbs"
           />
         <label>What is your Goal</label>
-        <select id="goal" class="browser-default">
+        <select class="browser-default" name="goal" value={inputs.goal} onChange={handleChange}>
                   <option value="" > select an option </option>
                   <option value="weightloss">Weight Loss</option>
                   <option value="weightgain">Gain Muscle</option>
                   <option value="eathealthy">Eat Healthy</option>
                 </select>
 
-                <label for="physicalactivity">Physical Activity</label>
-                <select id="activity" class="browser-default">
+                <label>Physical Activity</label>
+                <select name="activity"value={inputs.activity} onChange={handleChange} class="browser-default">
                   <option value="" > select an option </option>
                   <option value="sedentary">Sedentary</option>
                   <option value="light">Lightly Active</option>
@@ -72,8 +72,8 @@ const Form = props =>{
                   <option value="veryactive">Very Active</option>
                 </select>
 
-                <label for="sex">Gender</label>
-                <select id="sex" class="browser-default">
+                <label>Gender</label>
+                <select name ="sex" value={inputs.sex} onChange={handleChange} class="browser-default">
                   <option value="" > select an option </option>
                   <option value="male">Male</option>
                   <option value="female">Female</option>
