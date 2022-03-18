@@ -27,6 +27,7 @@ const Form = props =>{
           value={inputs.name}
           onChange={handleChange}
           placeholder="Enter Name"
+          required
           />
         <label>Age</label>
         <input
@@ -35,6 +36,7 @@ const Form = props =>{
           value={inputs.age}
           onChange={handleChange}
           placeholder="Enter Your Age"
+          required
           />
         
         <label>Height</label>
@@ -44,6 +46,7 @@ const Form = props =>{
           value={inputs.height}
           onChange={handleChange}
           placeholder="Height in Inches"
+          required
           />
 
         <label>Weight</label>
@@ -53,9 +56,10 @@ const Form = props =>{
           value={inputs.weight}
           onChange={handleChange}
           placeholder="Enter Weight in Lbs"
+          required
           />
         <label>What is your Goal</label>
-        <select class="browser-default" name="goal" value={inputs.goal} onChange={handleChange}>
+        <select class="browser-default" name="goal" value={inputs.goal} onChange={handleChange} required>
                   <option value="" > select an option </option>
                   <option value="weightloss">Weight Loss</option>
                   <option value="weightgain">Gain Muscle</option>
@@ -63,7 +67,7 @@ const Form = props =>{
                 </select>
 
                 <label>Physical Activity</label>
-                <select name="activity"value={inputs.activity} onChange={handleChange} class="browser-default">
+                <select name="activity"value={inputs.activity} onChange={handleChange} class="browser-default" required>
                   <option value="" > select an option </option>
                   <option value="sedentary">Sedentary</option>
                   <option value="light">Lightly Active</option>
@@ -73,7 +77,7 @@ const Form = props =>{
                 </select>
 
                 <label>Gender</label>
-                <select name ="sex" value={inputs.sex} onChange={handleChange} class="browser-default">
+                <select name ="sex" value={inputs.sex} onChange={handleChange} class="browser-default" required>
                   <option value="" > select an option </option>
                   <option value="male">Male</option>
                   <option value="female">Female</option>
