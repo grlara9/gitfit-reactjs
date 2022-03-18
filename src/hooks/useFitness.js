@@ -2,7 +2,7 @@ import React from 'react'
 
 const useFitness =() =>{
     
-    const bmrValue = async(height, weight, age, sex) => {
+    const bmrValue = (height, weight, age, sex) => {
         if (sex === "female") {
           return Math.ceil(655 + 9.6 * parseInt(weight) + 1.8 * parseInt(height) - 4.7 * parseInt(age));
         } else {
@@ -10,52 +10,67 @@ const useFitness =() =>{
         }
       }
 
-      const bmrAct = async(activity, bmr) => {
+      const bmrMod = (goal) => {
+        var bmrMod;
+        switch (goal) {
+          case "weightgain":
+            bmrMod = 1.15;
+            break;
+          case "weightloss":
+            bmrMod = 0.8;
+            break;
+          case "eathealthy":
+            bmrMod = 1;
+            break;
+        }
+        return bmrMod;
+      }
+
+   
+
+
+      const bmrAct = (activity, bmr) => {
         var act;
         switch (activity) {
-          case "Sedentary":
+          case "sedentary":
             act = 1.2 * bmr;
             break;
-          case "Lightly Active":
+          case "light":
             act = 1.375 * bmr;
             break;
-          case "Moderately Active":
+          case "moderate":
             act = 1.53 * bmr;
             break;
-          case "Active":
+          case "active":
             act = 1.725 * bmr;
             break;
-          case "Very Active":
+          case "veryactive":
             act = 1.9 * bmr;
             break;
         }
         return act;
       }
 
-      const bmrMod = async(goal) => {
-        var bmrMod;
-        switch (goal) {
-          case "Gain Muscle":
-            bmrMod = 1.15;
-            break;
-          case "Weight Loss":
-            bmrMod = 0.8;
-            break;
-          case "Eat Healthy":
-            bmrMod = 1;
-            break;
-        }
-        return bmrMod;
-      }
     
+    
+     
 
-    const submitRequest = async values =>{
-        console.log("SE ISO>>", values)
-        const response =await bmrValue(values.height, values.weight, values.age, values.sex)
-        console.log("RESULTADO>>>", response)
+    const submitRequest =  values =>{
+    
+        let response = bmrValue(values.height, values.weight, values.age, values.sex)
+        if(!response) return
 
-        const bmrMod = await bmrMod(values.goal)
-        console.log("bmrmod>>>", bmrMod)
+        console.log("THIS IS GOAL>>", values.goal)
+
+        const bm = bmrMod(values.goal)
+
+        console.log("bm", bm)
+
+        const ba = bmrAct(values.activity, response)
+        
+        console.log("BA>>>", ba)
+
+       
         
 
 
