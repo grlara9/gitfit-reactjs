@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Navigation from './ui/Navigation';
 import Form from './components/Form';
 import useFitness from './hooks/useFitness';
+import UserStats from './components/UserStats';
 import './App.css';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
 
 
       <Form submitInputs={onSubmit} />
+      <UserStats />
       </Router>
     </div>
   );
