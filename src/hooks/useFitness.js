@@ -57,19 +57,22 @@ const useFitness =() =>{
 
     const submitRequest =  values =>{
     
-        let response = bmrValue(values.height, values.weight, values.age, values.sex)
-        if(!response) return
+        let basalMetRate = bmrValue(values.height, values.weight, values.age, values.sex)
+        if(!basalMetRate) return
 
-        console.log("THIS IS GOAL>>", values.goal)
+        const bmrActivity = bmrAct(values.activity, basalMetRate)
+        const bmrRec = (bmrMod(values.goal) * bmrActivity)
 
-        const bm = bmrMod(values.goal)
-
-        console.log("bm", bm)
-
-        const ba = bmrAct(values.activity, response)
         
-        console.log("BA>>>", ba)
 
+        
+        
+
+        var protein = Math.round(0.8 * values.weight); //0.8 means grams of protein. We are multiplying by bodyweight to get how many grams of protein they should eat.
+        var fat = Math.round((0.25 * bmrRec) / 9); //The calories from fat should be 25% of total goal calories. You then need to divide by 9 in order to get the grams of fat they should eat.
+        var carbs = Math.round((bmrRec - protein * 4 - fat * 9) / 4); //The remaining macro is carbs. We just subtract the amount of calories from protein AND fat from the total goal calories. We then divide by 4 to get the amount of carbs in grams.
+
+        console.log("PROTEIN FAT CARBS>>>", protein, fat, carbs)
        
         
 
