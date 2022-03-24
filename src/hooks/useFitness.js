@@ -3,7 +3,9 @@ import React, {useState} from 'react'
 const useFitness =() =>{
 
   const [items, setItems] = useState([])
+  const [macros, setMacros] = useState(null)
     console.log("ITEMS>>>", items)
+    console.log("MACROS>>>", macros)
 
     const bmrValue = (height, weight, age, sex) => {
         if (sex === "female") {
@@ -76,25 +78,28 @@ const useFitness =() =>{
      
 
     const submitRequest =  values =>{
-
-      add(values)
+        add(values)
     
         let basalMetRate = bmrValue(values.height, values.weight, values.age, values.sex)
         if(!basalMetRate) return
-
         const bmrActivity = bmrAct(values.activity, basalMetRate)
         const bmrRec = (bmrMod(values.goal) * bmrActivity)
-
-        var protein = Math.round(0.8 * values.weight); //0.8 means grams of protein. We are multiplying by bodyweight to get how many grams of protein they should eat.
-        var fat = Math.round((0.25 * bmrRec) / 9); //The calories from fat should be 25% of total goal calories. You then need to divide by 9 in order to get the grams of fat they should eat.
-        var carbs = Math.round((bmrRec - protein * 4 - fat * 9) / 4); //The remaining macro is carbs. We just subtract the amount of calories from protein AND fat from the total goal calories. We then divide by 4 to get the amount of carbs in grams.
+        //0.8 means grams of protein. We are multiplying by bodyweight to get how many grams of protein they should eat.
+        var protein = Math.round(0.8 * values.weight); 
+        //The calories from fat should be 25% of total goal calories. You then need to divide by 9 in order to get the grams of fat they should eat.
+        var fat = Math.round((0.25 * bmrRec) / 9); 
+         //The remaining macro is carbs. We just subtract the amount of calories from protein AND fat from the total goal calories. We then divide by 4 to get the amount of carbs in grams.
+        var carbs = Math.round((bmrRec - protein * 4 - fat * 9) / 4);
 
         console.log("PROTEIN FAT CARBS>>>", protein, fat, carbs)
+
+        setMacros({basalMetRate, bmrActivity, bmrRec, protein, fat, carbs})
       }
 
     return{
         submitRequest,
-        items
+        items, 
+        macros
     }
 
 }

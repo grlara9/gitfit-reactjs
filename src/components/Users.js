@@ -1,35 +1,37 @@
 import Card from "react-bootstrap/Card";
 
 
-const Users =() =>{
-<Card style={{ width: '18rem' }}>
+const Users =({item}) =>{
+    console.log("ITEM LASTONE>>>", item)
+    return(
+        <Card style={{ width: '18rem' }}>
             <Card.Body>
                 <Card.Title>Card Title</Card.Title>
-                <p>
-            <strong>ID</strong>: 12334</p>
-          
-            <p>
-              <strong>Name</strong>: Guillermo</p>
-           
-              <p>
-                <strong>Age:</strong> 23</p>
-              <p>
-                <strong>Height</strong>: 123 
-              </p>
-              <p>
-                <strong>Weight</strong>:  145lbs
-              </p>
-              <p>
-                <strong>Goal</strong>: gain wait
-              </p>
-              <p>
-                <strong>Physical Activity</strong>: light
-              </p>
-              <p>
-                <strong>Sex</strong>: male <i class="material-icons">expand_more</i>
-              </p>
+                <p><strong>ID</strong>: {item.id}</p>
+                
+                    <p>
+                    <strong>Name</strong>: {item.name}</p>
+                
+                    <p>
+                        <strong>Age:</strong> {item.age}</p>
+                    <p>
+                        <strong>Height</strong>: {item.height} 
+                    </p>
+                    <p>
+                        <strong>Weight</strong>:  {item.weight}
+                    </p>
+                    <p>
+                        <strong>Goal</strong>: {item.goal}
+                    </p>
+                    <p>
+                        <strong>Physical Activity</strong>: {item.activity}
+                    </p>
+                    <p>
+                        <strong>Sex</strong>: {item.sex} <i class="material-icons">expand_more</i>
+                    </p>
                 <Card.Link href="#">Another Link</Card.Link>
             </Card.Body>
-</Card>
+        </Card>
+    )
 }
 export default Users
