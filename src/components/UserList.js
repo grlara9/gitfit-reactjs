@@ -1,10 +1,14 @@
 import React from 'react'
+import Users from './Users'
 
-
-const UserList = (items) =>{
-
+const UserList = ({items}) =>{
+ console.log("USERLIST ARRAY>>", items)
     return(
-       <h1>hola</h1>
+       <div className='userlist'>
+          {items.map((item) =>(
+            <Users item={item}/>
+        ))}
+       </div>
     )
 }
 

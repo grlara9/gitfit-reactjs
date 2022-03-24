@@ -4,6 +4,7 @@ const useFitness =() =>{
 
   const [items, setItems] = useState([])
     console.log("ITEMS>>>", items)
+
     const bmrValue = (height, weight, age, sex) => {
         if (sex === "female") {
           return Math.ceil(655 + 9.6 * parseInt(weight) + 1.8 * parseInt(height) - 4.7 * parseInt(age));
@@ -54,6 +55,7 @@ const useFitness =() =>{
       }
 
       const add = (values) =>{
+
         const newItems = {
           id: Math.random(),
           name: values.name,

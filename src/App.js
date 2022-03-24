@@ -9,6 +9,7 @@ function App() {
 
   const { submitRequest, items } = useFitness()
 
+  console.log("ARRAY>>>", items)
   const onSubmit = values =>{
     console.log("si llego el valor", {values})
     submitRequest(values)
