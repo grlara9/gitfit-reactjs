@@ -2,12 +2,12 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Navigation from './ui/Navigation';
 import Form from './components/Form';
 import useFitness from './hooks/useFitness';
-import UserStats from './components/UserStats';
+import UserList from './components/UserList';
 import './App.css';
 
 function App() {
 
-  const { submitRequest } = useFitness()
+  const { submitRequest, items } = useFitness()
 
   const onSubmit = values =>{
     console.log("si llego el valor", {values})
@@ -21,7 +21,7 @@ function App() {
 
 
       <Form submitInputs={onSubmit} />
-      <UserStats />
+      <UserList items={items}/>
       </Router>
     </div>
   );

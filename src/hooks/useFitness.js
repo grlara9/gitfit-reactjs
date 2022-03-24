@@ -1,7 +1,9 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 const useFitness =() =>{
-    
+
+  const [items, setItems] = useState([])
+    console.log("ITEMS>>>", items)
     const bmrValue = (height, weight, age, sex) => {
         if (sex === "female") {
           return Math.ceil(655 + 9.6 * parseInt(weight) + 1.8 * parseInt(height) - 4.7 * parseInt(age));
@@ -51,11 +53,29 @@ const useFitness =() =>{
         return act;
       }
 
+      const add = (values) =>{
+        const newItems = {
+          id: Math.random(),
+          name: values.name,
+          age: values.age,
+          height: values.height,
+          weight: values.weight,
+          goal: values.goal,
+          activity: values.activity,
+          sex: values.sex
+        }
+
+        const users = [...items, newItems]
+        setItems(users)
+
+      }
     
     
      
 
     const submitRequest =  values =>{
+
+      add(values)
     
         let basalMetRate = bmrValue(values.height, values.weight, values.age, values.sex)
         if(!basalMetRate) return
@@ -63,24 +83,16 @@ const useFitness =() =>{
         const bmrActivity = bmrAct(values.activity, basalMetRate)
         const bmrRec = (bmrMod(values.goal) * bmrActivity)
 
-        
-
-        
-        
-
         var protein = Math.round(0.8 * values.weight); //0.8 means grams of protein. We are multiplying by bodyweight to get how many grams of protein they should eat.
         var fat = Math.round((0.25 * bmrRec) / 9); //The calories from fat should be 25% of total goal calories. You then need to divide by 9 in order to get the grams of fat they should eat.
         var carbs = Math.round((bmrRec - protein * 4 - fat * 9) / 4); //The remaining macro is carbs. We just subtract the amount of calories from protein AND fat from the total goal calories. We then divide by 4 to get the amount of carbs in grams.
 
         console.log("PROTEIN FAT CARBS>>>", protein, fat, carbs)
-       
-        
-
-
-    }
+      }
 
     return{
-        submitRequest
+        submitRequest,
+        items
     }
 
 }
