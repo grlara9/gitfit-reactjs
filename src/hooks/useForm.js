@@ -41,6 +41,56 @@ const useForm = () =>{
                     
                 }
             break;
+
+            case 'height':
+                if(
+                    !new RegExp( /^[0-9]+$/).test(value)
+                ){
+                    setErrors({
+                        ...errors,
+                        height:'Only Numbers accepted'
+                    })
+                }else{
+
+                    let newObj = omit(errors, "height");
+                    setErrors(newObj);
+                    
+                }
+            break;
+
+            case 'weight':
+                if(
+                    !new RegExp( /^[0-9]+$/).test(value)
+                ){
+                    setErrors({
+                        ...errors,
+                        weight:'Only Numbers accepted'
+                    })
+                }else{
+
+                    let newObj = omit(errors, "weight");
+                    setErrors(newObj);
+                    
+                }
+            break;
+
+            case 'goal':
+                if(value == "0" || value == null){
+                    // we will set the error state
+
+                    setErrors({
+                        ...errors,
+                        goal:'Goal is Required'
+                    })
+                }else{
+                    // set the error state empty or remove the error for username input
+
+                    //omit function removes/omits the value from given object and returns a new object
+                    let newObj = omit(errors, "goal");
+                    setErrors(newObj);
+                    
+                }
+                break;
             
             default:
                 break;
@@ -49,7 +99,8 @@ const useForm = () =>{
 
 
     return{
-        validate
+        validate,
+        errors
     }
 }
 

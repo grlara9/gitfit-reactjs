@@ -4,7 +4,7 @@ import './Form.css'
 const Form = props =>{
   const [inputs, setInputs] = useState({})
 
-  const { validate } = useForm()
+  const { validate, errors } = useForm()
 
   const handleChange = event =>{
     const { name, value } = event.target;
@@ -65,7 +65,7 @@ const Form = props =>{
           />
         <label>What is your Goal</label>
         <select class="browser-default" name="goal" value={inputs.goal} onChange={handleChange} required>
-                  <option value="" > select an option </option>
+                  <option value="0" > select an option </option>
                   <option value="weightloss">Weight Loss</option>
                   <option value="weightgain">Gain Muscle</option>
                   <option value="eathealthy">Eat Healthy</option>
@@ -87,7 +87,7 @@ const Form = props =>{
                   <option value="male">Male</option>
                   <option value="female">Female</option>
                 </select>
-          <button type="submit"onClick={onSubmit}>SEARCH</button>
+          <button type="submit" disabled={!errors} onClick={onSubmit}>SEARCH</button>
      </form>
      </>
     )
