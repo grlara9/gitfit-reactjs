@@ -12,6 +12,7 @@ function App() {
 
   console.log("ARRAY>>>", items)
   console.log("MACROS ON APPJS", macros)
+  
   const onSubmit = values =>{
     console.log("si llego el valor", {values})
     submitRequest(values)

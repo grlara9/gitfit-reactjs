@@ -1,13 +1,18 @@
 import React, {useState} from 'react'
+import useForm from '../hooks/useForm'
 import './Form.css'
 const Form = props =>{
+  const [inputs, setInputs] = useState({})
 
-    const [inputs, setInputs] = useState([]);
+  const { validate } = useForm()
 
-    const handleChange = e =>{
-        const { name, value } = e.target;
-        setInputs({ ...inputs, [name]: value})
-    }
+  const handleChange = event =>{
+    const { name, value } = event.target;
+    setInputs({ ...inputs, [name]: value})
+
+    validate(event, name, value)
+}
+
 
     const onSubmit = e => {
         e.preventDefault();
