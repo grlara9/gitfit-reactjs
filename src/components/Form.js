@@ -79,6 +79,7 @@ console.log("Erros>>", errors)
             placeholder="Enter Name"
             required
           />
+          {errors.name && <h3>{errors.name}</h3>}
 
           <label>Age</label>
           <input
@@ -89,6 +90,7 @@ console.log("Erros>>", errors)
             placeholder="Enter Your Age"
             required
             />
+            {errors.age && <h3>{errors.age}</h3>}
           
           <label>Height</label>
           <input
@@ -99,6 +101,7 @@ console.log("Erros>>", errors)
             placeholder="Height in Inches"
             required
             />
+            {errors.height && <h3>{errors.height}</h3>}
 
           <label>Weight</label>
           <input
@@ -109,6 +112,9 @@ console.log("Erros>>", errors)
             placeholder="Enter Weight in Lbs"
             required
             />
+            {
+            errors.weight && <h3>{errors.weight}</h3>
+            }
           <label>What is your Goal</label>
           <select class="browser-default" name="goal" value={inputs.goal} onChange={handleChange} required>
             <option value="" > select an option </option>
@@ -116,7 +122,9 @@ console.log("Erros>>", errors)
             <option value="weightgain">Gain Muscle</option>
             <option value="eathealthy">Eat Healthy</option>
           </select>
-
+          {
+            errors.goal && <h3>{errors.goal}</h3>
+            }
           <label>Physical Activity</label>
           <select name="activity"value={inputs.activity} onChange={handleChange} class="browser-default" required>
             <option value="" > select an option </option>
@@ -126,13 +134,18 @@ console.log("Erros>>", errors)
             <option value="active">Active</option>
             <option value="veryactive">Very Active</option>
           </select>
-
+          {
+            errors.activity && <h3>{errors.activity}</h3>
+            }
           <label>Gender</label>
           <select name ="sex" value={inputs.sex} onChange={handleChange} class="browser-default" required>
             <option value="" > select an option </option>
             <option value="male">Male</option>
             <option value="female">Female</option>
           </select>
+          {
+            errors.sex && <h3>{errors.sex}</h3>
+            }
 
           <button type="submit" onClick={onSubmit}>SEARCH</button>
         </form>

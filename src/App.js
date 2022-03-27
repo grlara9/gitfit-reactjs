@@ -10,23 +10,16 @@ function App() {
 
   const { submitRequest, items, macros } = useFitness()
 
-  console.log("ARRAY>>>", items)
-  console.log("MACROS ON APPJS", macros)
-  
   const onSubmit = values =>{
-    console.log("si llego el valor", {values})
     submitRequest(values)
   }
   return (
     <div className="App">
       <Router>
-
-      <Navigation />
-
-
-      <Form submitInputs={onSubmit} />
-      <UserList items={items}/>
-      <Macros macros={macros}/>
+        <Navigation />
+        <Form submitInputs={onSubmit} />
+        <UserList items={items}/>
+        <Macros macros={macros}/>
       </Router>
     </div>
   );
