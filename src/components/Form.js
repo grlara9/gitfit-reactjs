@@ -6,7 +6,6 @@ const Form = props =>{
   const [errors, setErrors] = useState({})
   const [isSubmit, setIsSubmit] = useState(false);
 
-console.log("Erros>>", errors)
   const handleChange = event =>{
     const { name, value } = event.target;
     setInputs({ ...inputs, [name]: value})
@@ -18,12 +17,7 @@ console.log("Erros>>", errors)
     props.submitInputs(inputs)
   }
 
-  useEffect(() => {
-    console.log(errors);
-    if (Object.keys(errors).length === 0 && isSubmit) {
-      console.log(inputs);
-    }
-  }, [errors]);
+  
 
   const validate = (inputs) => {
     const errors = {};
