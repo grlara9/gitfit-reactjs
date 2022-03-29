@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Navigation from './ui/Navigation';
 import Form from './components/Form';
 import useFitness from './hooks/useFitness';
@@ -15,15 +15,18 @@ function App() {
     submitRequest(values)
   }
   return (
+    <Router>
     <div className="App">
-      <Router>
-        <Navigation />
-        <Form submitInputs={onSubmit} />
-        <UserList items={items}/>
-        <Macros macros={macros}/>
-        <Exercise />
-      </Router>
+        
+      <Routes>
+      <Route path="/" element={ <Form submitInputs={onSubmit} />} />
+      
+       
+
+      <Route path="/exercise" element={<Exercise />} />
+      </Routes>
     </div>
+    </Router>
   );
 }
 

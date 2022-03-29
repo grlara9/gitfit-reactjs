@@ -2,7 +2,9 @@ import React from "react";
 
 const Intermediate = () =>{
     return(
-        <h1>Intermediate</h1>
+        <div>
+            <h1>hola</h1>
+        </div>
     )
 }
 export default Intermediate
