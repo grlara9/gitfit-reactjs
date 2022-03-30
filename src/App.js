@@ -18,6 +18,7 @@ function App() {
     <Router>
     <div className="App">
         <Navigation />
+        <main>
       <Routes>
            <Route path="/" element={ <Form submitInputs={onSubmit} />} />
       
@@ -25,6 +26,7 @@ function App() {
 
         <Route path="/exercise" element={<Exercise />} />
       </Routes>
+      </main>
     </div>
     </Router>
   );

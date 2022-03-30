@@ -34,7 +34,7 @@ const Navigation =(props)=>{
                 </li>
 
                 <li className="nav-item">
-                    <Link to="/favorites" className="nav-link"  onClick={closeMenu}>
+                    <Link to="/exercise" className="nav-link"  onClick={closeMenu}>
                         Exercise
                     </Link>
                     

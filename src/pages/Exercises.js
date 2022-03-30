@@ -2,11 +2,10 @@ import React,{useState, useEffect} from "react";
 import Beginner from "../components/BeginnerPlan";
 import Intermediate from "../components/IntermediatePlan";
 import Advanced from "../components/AdvancedPlan"
+import './Exercise.css'
 
 const Exercise = () =>{
     const [exercise, setExercise] = useState("selectExercise")
-    console.log("ASDFG>>>", exercise)
-
     const [beginnerContentVisible, setBeginnerContentVisible] = useState(false)
     const [IntermediateContentVisible, setIntermediateContentVisible] = useState(false)
     const [AdvancedContentVisible, setAdvancedContentVisible] = useState(false)
@@ -37,10 +36,12 @@ const Exercise = () =>{
                 <option value="advanced">Advanced</option>
             </select>
             </div>
+
+            <div className="selectionList">
             {beginnerContentVisible && <Beginner />}
             {IntermediateContentVisible && <Intermediate />}
             {AdvancedContentVisible && <Advanced />}
-
+            </div>
         </div>
     )
 }
