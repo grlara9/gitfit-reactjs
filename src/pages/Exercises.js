@@ -4,22 +4,25 @@ import Intermediate from "../components/IntermediatePlan";
 import Advanced from "../components/AdvancedPlan"
 
 const Exercise = () =>{
-    const [exercise, setExercise] = useState("as")
+    const [exercise, setExercise] = useState("selectExercise")
+    console.log("ASDFG>>>", exercise)
 
     const [beginnerContentVisible, setBeginnerContentVisible] = useState(false)
     const [IntermediateContentVisible, setIntermediateContentVisible] = useState(false)
     const [AdvancedContentVisible, setAdvancedContentVisible] = useState(false)
 
-    useEffect(()=>{
-        exercise === "beginner" ? setBeginnerContentVisible(true): setBeginnerContentVisible(false);
-        exercise === "intermediate" ? setIntermediateContentVisible(true) : setIntermediateContentVisible(false);
-        exercise === "advanced" ? setAdvancedContentVisible(true) : setAdvancedContentVisible(false);
+    useEffect(()=> {
+        exercise === "beginner" 
+        ? setBeginnerContentVisible(true) 
+        :setBeginnerContentVisible(false);
+        exercise === 'intermediate' ? setIntermediateContentVisible(true) : setIntermediateContentVisible(false);
+        exercise === 'advanced' ? setAdvancedContentVisible(true) : setAdvancedContentVisible(false);
     }, [exercise]);
    
 
     const handleChange = event =>{
-        const { name, value } = event.target;
-        setExercise({ ...exercise, [name]: value})
+        setExercise(event.target.value)
+
     }
 
 
@@ -27,8 +30,8 @@ const Exercise = () =>{
         <div className="container">
             <h1>Select your Workout Experience</h1>
             <div className="exercise">
-            <select name ="exercise"  onChange={handleChange}>
-                <option value="as" > Select Level of exercise </option>
+            <select  value={exercise} onChange={handleChange}>
+                <option value="selectExercise" > Select Level of exercise </option>
                 <option value="beginner">Beginner</option>
                 <option value="intermediate">Intermediate</option>
                 <option value="advanced">Advanced</option>

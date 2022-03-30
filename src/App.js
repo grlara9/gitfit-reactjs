@@ -17,13 +17,13 @@ function App() {
   return (
     <Router>
     <div className="App">
-        
+        <Navigation />
       <Routes>
-      <Route path="/" element={ <Form submitInputs={onSubmit} />} />
+           <Route path="/" element={ <Form submitInputs={onSubmit} />} />
       
        
 
-      <Route path="/exercise" element={<Exercise />} />
+        <Route path="/exercise" element={<Exercise />} />
       </Routes>
     </div>
     </Router>

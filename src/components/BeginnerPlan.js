@@ -1,9 +1,11 @@
 import React from "react";
 
-const Beginner = () =>{
+const Beginner = () => {
     return(
-        <h1>Beginner</h1>
+        <div className="beginner">
+            <h1>hola</h1>
+        </div>
     )
 }
 
-export default Beginner
+export default Beginner;
