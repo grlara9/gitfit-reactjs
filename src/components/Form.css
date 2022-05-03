@@ -9,13 +9,15 @@
     padding: 10px;
     text-align: center;
     font-size: 24px;
+   
   }
 
   .heading {
     font-size: 2rem;
     font-weight: 700;
     margin-bottom: 50px;
-    padding: 0 20px;
+    padding: 16px 20px;
+    color:#d06e12;
     
   }
 
@@ -24,7 +26,8 @@
 .form{  
   width: 60%;
   margin: 0 auto;
-
+background-color: #fff;
+padding: 2rem;
 }
 
 

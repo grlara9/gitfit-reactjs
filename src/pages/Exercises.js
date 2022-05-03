@@ -25,8 +25,8 @@ const Exercise = () =>{
     }
 
 
-    return(
-        <div className="container">
+    return( 
+        <section className="container">
             <h1>Select your Workout Experience</h1>
             <div className="exercise">
             <select  value={exercise} onChange={handleChange}>
@@ -42,7 +42,7 @@ const Exercise = () =>{
             {IntermediateContentVisible && <Intermediate />}
             {AdvancedContentVisible && <Advanced />}
             </div>
-        </div>
+        </section>
     )
 }
 export default Exercise
