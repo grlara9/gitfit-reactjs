@@ -1,6 +1,9 @@
 .App {
-  margin: 0;
-  padding: 0;
+ width: 100%;
+ max-width: 960px;
+ margin: 0 auto;
+ padding: 0 20px;
+ text-align: center;
 }
 
 main{

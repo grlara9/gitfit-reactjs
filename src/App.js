@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Navigation from './ui/Navigation';
 import Form from './components/Form';
 import useFitness from './hooks/useFitness';
-import UserList from './components/UserList';
+import UserDetails from './components/UserDetails';
 import './App.css';
 import Macros from './components/Macros';
 import Exercise from './pages/Exercises';
@@ -21,7 +21,7 @@ function App() {
         <main>
       <Routes>
            <Route path="/" element={ <Form submitInputs={onSubmit} />} />
-      
+       
        
 
         <Route path="/exercise" element={<Exercise />} />

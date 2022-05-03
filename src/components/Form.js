@@ -17,6 +17,8 @@ const Form = props =>{
     props.submitInputs(inputs)
   }
 
+ 
+
   
 
   const validate = (inputs) => {
@@ -61,20 +63,28 @@ const Form = props =>{
       ) : (
         <pre>{JSON.stringify(inputs, undefined, 2)}</pre>
       )}
+      <section className='heading'>
+        <h1 className="logo">gitFit App</h1>
+        <h4 className="title">Welcome to the gitFit App. Here you will find everything you need to reach your fitness goals! </h4>
+      </section>
+         
+          
+        <section className='form'>
         <form>
-          <h1 className="logo">gitFit App</h1>
-          <h4 className="title">Welcome to the gitFit App. Here you will find everything you need to reach your fitness goals! </h4>
-          <label>Name</label>
-          <input
-            type="text"
-            name="name"
-            value={inputs.name}
-            onChange={handleChange}
-            placeholder="Enter Name"
-            required
-          />
-          {errors.name && <h3>{errors.name}</h3>}
+          <div className='form-group'>
+            <label>Name</label>
+              <input
+                type="text"
+                name="name"
+                value={inputs.name}
+                onChange={handleChange}
+                placeholder="Enter Name"
+                required
+                />
+            {errors.name && <h3>{errors.name}</h3>}
+          </div>
 
+          <div className='form-group'>
           <label>Age</label>
           <input
             type="text"
@@ -85,7 +95,9 @@ const Form = props =>{
             required
             />
             {errors.age && <h3>{errors.age}</h3>}
-          
+          </div>
+
+          <div className='form-group'>
           <label>Height</label>
           <input
             type="text"
@@ -96,7 +108,9 @@ const Form = props =>{
             required
             />
             {errors.height && <h3>{errors.height}</h3>}
+            </div>
 
+            <div className='form-group'>
           <label>Weight</label>
           <input
             type="text"
@@ -109,6 +123,9 @@ const Form = props =>{
             {
             errors.weight && <h3>{errors.weight}</h3>
             }
+            </div>
+
+            <div className='form-group'>
           <label>What is your Goal</label>
           <select class="browser-default" name="goal" value={inputs.goal} onChange={handleChange} required>
             <option value="" > select an option </option>
@@ -119,6 +136,9 @@ const Form = props =>{
           {
             errors.goal && <h3>{errors.goal}</h3>
             }
+            </div>
+
+            <div className='form-group'>
           <label>Physical Activity</label>
           <select name="activity"value={inputs.activity} onChange={handleChange} class="browser-default" required>
             <option value="" > select an option </option>
@@ -131,6 +151,9 @@ const Form = props =>{
           {
             errors.activity && <h3>{errors.activity}</h3>
             }
+            </div>
+
+            <div className='form-group'>
           <label>Gender</label>
           <select name ="sex" value={inputs.sex} onChange={handleChange} class="browser-default" required>
             <option value="" > select an option </option>
@@ -140,9 +163,13 @@ const Form = props =>{
           {
             errors.sex && <h3>{errors.sex}</h3>
             }
-
-          <button type="submit" onClick={onSubmit}>SEARCH</button>
+          </div>
+          <div className='form-group'>
+          <button type="submit"  onClick={onSubmit}>SEARCH</button>
+          </div>
         </form>
+        </section>
+        
      </>
     )
   }

@@ -7,6 +7,7 @@ const useFitness =() =>{
     console.log("ITEMS>>>", items)
     console.log("MACROS>>>", macros)
 
+
     const bmrValue = (height, weight, age, sex) => {
         if (sex === "female") {
           return Math.ceil(655 + 9.6 * parseInt(weight) + 1.8 * parseInt(height) - 4.7 * parseInt(age));
@@ -56,17 +57,17 @@ const useFitness =() =>{
         return act;
       }
 
-      const add = (values) =>{
+      const addInputs = (values) =>{
 
         const newItems = {
-          id: Math.random(),
-          name: values.name,
-          age: values.age,
-          height: values.height,
-          weight: values.weight,
-          goal: values.goal,
-          activity: values.activity,
-          sex: values.sex
+            id: Math.random(),
+            name: values.name,
+            age: values.age,
+            height: values.height,
+            weight: values.weight,
+            goal: values.goal,
+            activity: values.activity,
+            sex: values.sex
         }
 
         const users = [...items, newItems]
@@ -78,7 +79,7 @@ const useFitness =() =>{
      
 
     const submitRequest =  values =>{
-        add(values)
+        addInputs(values)
     
         let basalMetRate = bmrValue(values.height, values.weight, values.age, values.sex)
         if(!basalMetRate) return

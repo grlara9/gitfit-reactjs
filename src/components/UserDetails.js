@@ -1,15 +1,14 @@
 import React from 'react'
 import Users from './Users'
 
-const UserList = ({items}) =>{
+const UserDetails = ({items}) =>{
  console.log("USERLIST ARRAY>>", items)
     return(
        <div className='userlist'>
-          {items.map((item) =>(
-            <Users key={item.id} item={item}/>
+          <h1>hola</h1>
         ))}
        </div>
     )
 }
 
-export default UserList
+export default UserDetails
