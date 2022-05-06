@@ -1,13 +1,74 @@
-import React from 'react'
-import Users from './Users'
+import {useState} from 'react'
 
-const UserDetails = ({items}) =>{
- console.log("USERLIST ARRAY>>", items)
-    return(
-       <div className='userlist'>
-          <h1>hola</h1>
-        ))}
+import { Button, Collapse } from 'react-bootstrap';
+
+
+const UserDetails = () =>{
+
+    const [open, setOpen] = useState(false);
+
+  return (
+    <>
+      <Button
+       
+        variant="primary" size="lg"
+        onClick={() => setOpen(!open)}
+        aria-controls="example-collapse-text"
+        aria-expanded={open}
+      >
+        BMR
+      </Button>
+      <Collapse in={open}>
+        <div id="example-collapse-text">
+        Based off of your physical stats, your Basal Metabolic Rate (BMR) is: 1450.25
+        </div>
+      </Collapse>
+
+      <Button
+       
+       variant="primary" size="lg"
+       onClick={() => setOpen(!open)}
+       aria-controls="example-collapse-text"
+       aria-expanded={open}
+     >
+       BMR
+     </Button>
+     <Collapse in={open}>
+       <div id="example-collapse-text">
+       Based off of your physical stats, your Basal Metabolic Rate (BMR) is: 1450.25
        </div>
+     </Collapse>
+
+     <Button
+       
+       variant="primary" size="lg"
+       onClick={() => setOpen(!open)}
+       aria-controls="example-collapse-text"
+       aria-expanded={open}
+     >
+       BMR
+     </Button>
+     <Collapse in={open}>
+       <div id="example-collapse-text">
+       Based off of your physical stats, your Basal Metabolic Rate (BMR) is: 1450.25
+       </div>
+     </Collapse>
+
+     <Button
+       
+       variant="primary" size="lg"
+       onClick={() => setOpen(!open)}
+       aria-controls="example-collapse-text"
+       aria-expanded={open}
+     >
+       BMR
+     </Button>
+     <Collapse in={open}>
+       <div id="example-collapse-text">
+       Based off of your physical stats, your Basal Metabolic Rate (BMR) is: 1450.25
+       </div>
+     </Collapse>
+    </>
     )
 }
 

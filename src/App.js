@@ -2,10 +2,11 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Navigation from './ui/Navigation';
 import Form from './components/Form';
 import useFitness from './hooks/useFitness';
-import UserDetails from './components/UserDetails';
+import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 import Macros from './components/Macros';
 import Exercise from './pages/Exercises';
+import UserDetails from './components/UserDetails';
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
 
         <Route path="/exercise" element={<Exercise />} />
       </Routes>
+      <UserDetails />
       </main>
     </div>
     </Router>
