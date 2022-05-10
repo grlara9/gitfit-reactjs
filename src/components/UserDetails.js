@@ -31,11 +31,11 @@ const UserDetails = () =>{
        aria-controls="example-collapse-text"
        aria-expanded={open}
      >
-       BMR
+       BMR + Activity Level
      </Button>
      <Collapse in={open}>
        <div id="example-collapse-text">
-       Based off of your physical stats, your Basal Metabolic Rate (BMR) is: 1450.25
+       Based off of your BMR plus your Activity Factor, your BMR is:2218.88
        </div>
      </Collapse>
 
