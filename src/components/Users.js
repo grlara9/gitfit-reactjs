@@ -1,34 +1,18 @@
 import Card from "react-bootstrap/Card";
 
 
-const Users =({item}) =>{
-    console.log("ITEM LASTONE>>>", item)
+const Users =({name}) =>{
+   
     return(
-        <Card style={{ width: '18rem' }}>
+        <Card style={{ color: 'green' }}>
             <Card.Body>
                 <Card.Title>Card Title</Card.Title>
-                <p><strong>ID</strong>: {item.id}</p>
+                
                 
                     <p>
-                    <strong>Name</strong>: {item.name}</p>
+                    <strong>Name</strong>: {name}</p>
                 
-                    <p>
-                        <strong>Age:</strong> {item.age}</p>
-                    <p>
-                        <strong>Height</strong>: {item.height} 
-                    </p>
-                    <p>
-                        <strong>Weight</strong>:  {item.weight}
-                    </p>
-                    <p>
-                        <strong>Goal</strong>: {item.goal}
-                    </p>
-                    <p>
-                        <strong>Physical Activity</strong>: {item.activity}
-                    </p>
-                    <p>
-                        <strong>Sex</strong>: {item.sex} <i class="material-icons">expand_more</i>
-                    </p>
+                 
                 <Card.Link href="#">Another Link</Card.Link>
             </Card.Body>
         </Card>

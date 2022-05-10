@@ -8,14 +8,14 @@ import Macros from './components/Macros';
 import Exercise from './pages/Exercises';
 import UserDetails from './components/UserDetails';
 import {useState} from 'react'
-import userList from './components/userList';
+import UserList from './components/userList'
 function App() {
 
   const { submitRequest, items, macros } = useFitness()
   const [user, setUser] = useState([
 		{
-			id: nanoid(),
-			name: 'This is my second note!',
+			id: 12345,
+			name: 'Guillermo',
 			date: '21/04/2021',
       age: '23',
       height: '34',
@@ -25,8 +25,8 @@ function App() {
       sex: 'male',
 		},
 		{
-			id: nanoid(),
-			name: 'This is my second note!',
+			id: 123456,
+			name: 'Roberto',
 			date: '21/04/2021',
       age: '23',
       height: '34',
@@ -37,8 +37,8 @@ function App() {
 
 		},
 		{
-			id: nanoid(),
-			name: 'This is my second note!',
+			id: 126345,
+			name: 'jessica',
 			date: '21/04/2021',
       age: '23',
       height: '34',
@@ -48,8 +48,8 @@ function App() {
       sex: 'male',
 		},
 		{
-			id: nanoid(),
-			name: 'This is my second note!',
+			id: 765433,
+			name: 'julia',
 			date: '21/04/2021',
       age: '23',
       height: '34',
