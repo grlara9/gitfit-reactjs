@@ -39,6 +39,13 @@ const Navigation =(props)=>{
                     </Link>
                     
                 </li>
+
+                <li className="nav-item">
+                    <Link to="/users" className="nav-link"  onClick={closeMenu}>
+                        Users
+                    </Link>
+                    
+                </li>
             </ul>
          </Header>
        
