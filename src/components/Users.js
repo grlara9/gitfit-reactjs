@@ -9,7 +9,7 @@ const Users =({name}) =>{
                 <Card.Title>Card Title</Card.Title>
                 
                 
-                  <Link to='/userDetails.js' >
+                  <Link to='/details' >
                   <p>
                     <strong>Name</strong>: {name}</p>
                 

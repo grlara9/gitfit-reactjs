@@ -72,9 +72,10 @@ function App() {
         <main>
       <Routes>
           <Route path="/" element={ <Form submitInputs={onSubmit} />} />
+          <Route path='/users' element={<UserList user={user}/>} />
           <Route path="/exercise" element={<Exercise />} />
+          <Route path='/details' element={< UserDetails />} />
       </Routes>
-      <UserList user={user}/>
       </main>
     </div>
     </Router>
