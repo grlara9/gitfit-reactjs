@@ -2,21 +2,20 @@ import Card from "react-bootstrap/Card";
 import { Link } from 'react-router-dom'
 import './Users.css'
 
-const Users =({name}) =>{ 
-   
-    return(
-        
-            <Card className="Card">
+const Users =({users}) =>{  
+    console.log("uses", users)
+   return(
+       <Card className="Card">
             <Card.Body>
                 <Card.Title>Card Title</Card.Title>
                 
                 
-                  <Link to='/details' >
+                  <Link to={`/details/${users.id}`} >
                   <p>
-                    <strong>Name</strong>: {name}</p>
+                    <strong>Name</strong>: {users.name}</p>
                 
                  </Link>
-                <Card.Link href="#">Another Link</Card.Link>
+               
             </Card.Body>
         </Card>
        

@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 import Macros from './components/Macros';
 import Exercise from './pages/Exercises';
-import UserDetails from './components/UserDetails';
+import Details from './pages/Details';
 import {useState} from 'react'
 import UserList from './components/userList'
 function App() {
@@ -70,12 +70,12 @@ function App() {
     <div className="App">
         <Navigation />
         <main>
-      <Routes>
-          <Route path="/" element={ <Form submitInputs={onSubmit} />} />
-          <Route path='/users' element={<UserList user={user}/>} />
-          <Route path="/exercise" element={<Exercise />} />
-          <Route path='/details' element={< UserDetails />} />
-      </Routes>
+          <Routes>
+            <Route path="/" element={ <Form submitInputs={onSubmit} />} />
+            <Route path='/users' element={<UserList user={user}/>} />
+            <Route path="/exercise" element={<Exercise />} />
+            <Route path='/details/:id' element={< Details user={user}/>} />
+          </Routes>
       </main>
     </div>
     </Router>
