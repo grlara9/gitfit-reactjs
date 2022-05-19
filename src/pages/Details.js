@@ -1,10 +1,11 @@
 import UserDetails from "../components/UserDetails"
 
 const Details = (props) => {
+    const {name, sex} = props.users
     return(
         <div className='details'>
-            <h1>hola si es aqui {props.name}</h1> 
-            <span>{props.sex}</span>
+            <h1>hola si es aqui {name}</h1> 
+            <span>hola{sex}</span>
         </div>
     )
 }

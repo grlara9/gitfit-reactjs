@@ -74,7 +74,16 @@ function App() {
             <Route path="/" element={ <Form submitInputs={onSubmit} />} />
             <Route path='/users' element={<UserList user={user}/>} />
             <Route path="/exercise" element={<Exercise />} />
-            <Route path='/details/:id' element={< Details user={user}/>} />
+            <Route 
+            path='/details/:id' 
+            render={({ match }) => (
+              <Details
+                  users={user.find(
+                  (users) => String(users.id) === match.params.id
+                )}
+              />
+            )}
+            />
           </Routes>
       </main>
     </div>
